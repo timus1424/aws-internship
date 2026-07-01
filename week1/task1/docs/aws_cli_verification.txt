@@ -1,0 +1,32 @@
+AWS CLI Configuration Verification
+==================================
+
+Date:
+01 July 2026
+
+IAM User:
+sumit-admin
+
+Command:
+aws --version
+
+Output:
+aws-cli/2.35.13 Python/3.14.6 Darwin/25.5.0 source/arm64
+
+------------------------------------------------------------
+
+Command:
+aws sts get-caller-identity
+
+Output:
+{
+    "UserId": "AIDAZBXXXXXXXXXXXXXXX",
+    "Account": "622XXXXXXXXX",
+    "Arn": "arn:aws:iam::622XXXXXXXXX:user/sumit-admin"
+}
+
+------------------------------------------------------------
+
+Explanation:
+The AWS CLI was successfully configured and authenticated using the IAM Administrator user.
+The `aws sts get-caller-identity` command verifies the identity currently being used by the AWS CLI.
