@@ -1,0 +1,42 @@
+AWS CLI Permission Verification
+===============================
+
+Profile Used:
+test-user
+
+-------------------------------------------------
+
+Command:
+aws sts get-caller-identity --profile test-user
+
+Result:
+Success
+
+Verified Identity:
+arn:aws:iam::<account-id>:user/test-user
+
+-------------------------------------------------
+
+Command:
+aws s3 ls --profile test-user
+
+Result:
+Success
+
+Explanation:
+The custom IAM policy explicitly allows listing S3 buckets.
+
+-------------------------------------------------
+
+Command:
+aws s3 mb s3://timus-cloud-test-1783094337 --profile test-user
+
+Result:
+Failed
+
+Error:
+AccessDenied
+
+Explanation:
+The IAM policy does not grant s3:CreateBucket permission.
+AWS implicitly denied the request, demonstrating the Principle of Least Privilege.
