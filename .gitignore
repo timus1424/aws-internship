@@ -1,15 +1,26 @@
 # macOS
 .DS_Store
 
-# VS Code
+# SSH Keys
+*.pem
+
+# Environment Variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Editor
 .vscode/
+.idea/
 
 # Python
 __pycache__/
 *.pyc
 
-# AWS
-*.pem
+# Node
+node_modules/
 
-# Logs
-*.log
+# OS Files
+Thumbs.db
