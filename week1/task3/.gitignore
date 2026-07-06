@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# AWS Credentials
+.aws/
+
+# Python
+_pycache_/
+
+# VS Code
+.vscode/
+
+# macOS metadata
+.AppleDouble
+.LSOverride
+
+#key
+*.pem
