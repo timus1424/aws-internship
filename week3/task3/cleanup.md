@@ -1,10 +1,11 @@
-## Cleanup
+# Cleanup
 
-After completing the task:
+Completed after verifying the deployment.
 
-- Deleted the CloudFormation stack.
-- Verified associated resources were removed.
-- Confirmed no running EC2 instances remained.
-- Avoided unnecessary AWS charges.
+- [x] Deleted the CloudFormation stack.
+- [x] Verified associated resources were removed.
+- [x] Confirmed no EC2 instances remained running.
+- [x] Confirmed no unexpected AWS resources remained.
+- [x] Avoided unnecessary AWS charges.
 
 ---
