@@ -147,3 +147,11 @@ Benefits:
 - [x] Capture Screenshots
 
 ---
+
+## Week 3 Reflection
+
+This week helped me understand the difference between manually creating AWS infrastructure and defining it as code.
+The biggest takeaway was realizing that CloudFormation doesn't replace AWS concepts—it automates them. Building the template reinforced how VPCs, subnets, route tables, security groups, EC2 instances, and UserData all fit together.
+The most challenging part was debugging template syntax and understanding CloudFormation's dependency model, but validating the template and watching the stack create every resource automatically was one of the most rewarding parts of the internship so far.
+
+---

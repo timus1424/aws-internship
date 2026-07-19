@@ -1,0 +1,96 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="slwSiBX1dhomX8cCa1_z" name="Page-2">
+    <mxGraphModel dx="774" dy="566" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="519.5" y="223" />
+              <mxPoint x="519.5" y="223" />
+            </Array>
+            <mxPoint x="519.5" y="253" as="sourcePoint" />
+            <mxPoint x="519.5" y="253" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Internet" vertex="1">
+          <mxGeometry height="26" width="130" x="455" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=0;endArrow=none;endFill=0;startArrow=none;startFill=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="635" y="254" />
+              <mxPoint x="405" y="254" />
+            </Array>
+            <mxPoint x="635" y="284" as="sourcePoint" />
+            <mxPoint x="405" y="284" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Load Balancer&amp;nbsp;&lt;br&gt;( Distributes incoming requests )" vertex="1">
+          <mxGeometry height="50" width="200" x="420" y="117" as="geometry" />
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="519.5" y="163" />
+              <mxPoint x="519.5" y="163" />
+            </Array>
+            <mxPoint x="519.5" y="163" as="sourcePoint" />
+            <mxPoint x="519.5" y="198" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="2oRbJo1xxWxSc1V9DheL-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="333" />
+              <mxPoint x="520" y="333" />
+            </Array>
+            <mxPoint x="405" y="305" as="sourcePoint" />
+            <mxPoint x="520" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="EC2 Instance #1" vertex="1">
+          <mxGeometry height="10" width="110" x="350" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classic;startFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="635" y="333" />
+              <mxPoint x="520" y="333" />
+            </Array>
+            <mxPoint x="635" y="303" as="sourcePoint" />
+            <mxPoint x="520" y="343" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="EC2 Instance #2" vertex="1">
+          <mxGeometry height="10" width="110" x="580" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-10" edge="1" parent="1" source="2oRbJo1xxWxSc1V9DheL-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Auto Scaling Group&lt;div&gt;(Creates or removes EC2 instances)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="220" x="410" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Launch Template&lt;div&gt;( Recipe for creating EC2 instances )&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="250" x="395" y="443" as="geometry" />
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Target Group" vertex="1">
+          <mxGeometry height="30" width="142" x="449" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="2oRbJo1xxWxSc1V9DheL-14" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="519.5" y="87" />
+              <mxPoint x="519.5" y="87" />
+            </Array>
+            <mxPoint x="519.5" y="87" as="sourcePoint" />
+            <mxPoint x="519.5" y="122" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
