@@ -22,7 +22,7 @@ Create a CloudWatch alarm that:
 See:
 
 ```
-diagrams/cloudwatch-monitoring-workflow.drawio
+diagrams/cloudwatch-monitoring-workflow.png
 ```
 
 ---
