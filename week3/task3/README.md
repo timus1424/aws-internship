@@ -36,22 +36,8 @@ Provision AWS infrastructure using Infrastructure as Code (IaC) instead of manua
 
 ## Architecture
 
-```
-Internet
-    │
-Internet Gateway
-    │
-   VPC
-    │
-Public Subnet
-    │
-Route Table
-    │
-Security Group
-    │
-   EC2
-```
 ![Architecture](diagrams/architecture-overview.png)
+
 ---
 
 ## Deployment Workflow
