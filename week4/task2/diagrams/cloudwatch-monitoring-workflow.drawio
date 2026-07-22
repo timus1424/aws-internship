@@ -1,0 +1,54 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="wWN8LnkeXXH1fRUVB7tj">
+    <mxGraphModel dx="1013" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-3" edge="1" parent="1" source="Nex_C1aLNV-X6ya8Eh1g-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Nex_C1aLNV-X6ya8Eh1g-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;Amazon EC2&lt;/p&gt;&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;CPU Utilization&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="235" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-7" edge="1" parent="1" source="Nex_C1aLNV-X6ya8Eh1g-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="Nex_C1aLNV-X6ya8Eh1g-6" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="335" y="200" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-2" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;Amazon Cloudwatch Metric Collection&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="250" x="210" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-10" edge="1" parent="1" source="Nex_C1aLNV-X6ya8Eh1g-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="Nex_C1aLNV-X6ya8Eh1g-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-4" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;Cloudwatch Alarm&lt;/p&gt;" vertex="1">
+          <mxGeometry height="40" width="200" x="235" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="335" y="257" as="sourcePoint" />
+            <mxPoint x="335" y="297" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;CPU&amp;nbsp; &amp;gt;.&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237)); background-color: transparent;&quot;&gt;70% Threshold&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="30" width="240" x="215" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-12" edge="1" parent="1" source="Nex_C1aLNV-X6ya8Eh1g-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Nex_C1aLNV-X6ya8Eh1g-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Publish Notification" vertex="1">
+          <mxGeometry height="30" width="150" x="260" y="372" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-14" edge="1" parent="1" source="Nex_C1aLNV-X6ya8Eh1g-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Nex_C1aLNV-X6ya8Eh1g-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-11" parent="1" style="whiteSpace=wrap;html=1;" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;&amp;nbsp; &amp;nbsp; Amazon SNS Topic&lt;/p&gt;&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;week4-cloudwatch-alerts&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="235" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="Nex_C1aLNV-X6ya8Eh1g-13" parent="1" style="whiteSpace=wrap;html=1;" value="&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;Email Notification&lt;/p&gt;&lt;p class=&quot;p1&quot; style=&quot;margin: 0px; font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Helvetica; color: rgb(0, 0, 0); text-align: start;&quot;&gt;SNS Subscription Email&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="190" x="240" y="550" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
