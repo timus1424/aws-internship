@@ -1,0 +1,324 @@
+# ARCHITECTURE 
+#    Internet
+#	│
+#       ▼
+# Internet Gateway
+#	│
+#       ▼
+#	VPC
+#	│
+#	├── Internet Gateway
+#	│      
+#	│ ─Public Subn A
+#	│
+#	├── Public Sub Bnet
+#	│
+# 	|─ Route Table
+#	|           
+#	|– ALB Security Group          
+#	│        
+#	|– EC2 Security Group
+#	│           
+#	|– Launch Template
+#	│
+#	|– Target Group
+#	|
+#	|– Application Load Balancer	
+#       |	
+#	|– Listener
+#	|
+#	└ Auto Scaling Group
+
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: >
+  Week 4 Task 3 - AWS CloudFormation template that provisions a highly available
+  web application infrastructure using a VPC, public subnets, security groups,
+  Application Load Balancer, Launch Template, Auto Scaling Group, and EC2 instances. 
+
+Parameters:
+
+# Public IPv4 Address
+  MyIP: 
+    Type: String
+    Description: Enter your public IPv4 address in CIDR notation
+    Default: 0.0.0.0/0
+
+Resources:
+
+# VPC
+  Week3VPC:
+    Type: AWS::EC2::VPC
+    
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: week4-cloudformation-vpc
+
+# Internet Gateway
+  Week3InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    
+    Properties:
+      Tags:
+        - Key: Name
+          Value: week4-igw
+
+  AttachGateway: 
+    Type: AWS::EC2::VPCGatewayAttachment
+    
+    Properties:
+      VpcId: !Ref Week3VPC
+      InternetGatewayId: !Ref Week3InternetGateway
+
+#need two public subnets for the ALB
+# Public Subnet A
+  PublicSubnetA:
+    Type: AWS::EC2::Subnet
+    
+    Properties:
+      VpcId: !Ref Week3VPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: ap-south-1a
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: week4-public-subnet-a
+
+# Public Subnet B
+  PublicSubnetB:
+    Type: AWS::EC2::Subnet
+      
+    Properties:
+      VpcId: !Ref Week3VPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: ap-south-1b
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: week4-public-subnet-b
+
+# Public Route Table
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    
+    Properties:
+      VpcId: !Ref Week3VPC
+      Tags:
+        - Key: Name
+          Value: week4-public-rt
+
+  DefaultPublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref Week3InternetGateway
+
+# Route Table Association
+  PublicSubnetARouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+
+    Properties:
+      SubnetId: !Ref PublicSubnetA
+      RouteTableId: !Ref PublicRouteTable
+
+# Route Table Association
+  PublicSubnetBRouteAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    
+    Properties:
+      SubnetId: !Ref PublicSubnetB
+      RouteTableId: !Ref PublicRouteTable
+
+# Security Groups: ALB and EC2
+  ALBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+
+    Properties:
+      GroupDescription: Allow inbound HTTP traffic to the ALB
+      VpcId: !Ref Week3VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: week4-alb-sg
+
+  EC2SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+
+    Properties:
+      GroupDescription: Allow SSH from MyIP and HTTP from the ALB
+      VpcId: !Ref Week3VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref MyIP
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          SourceSecurityGroupId: !Ref ALBSecurityGroup
+      Tags:
+        - Key: Name
+          Value: week4-ec2-sg
+
+#Week 4 launch template
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+
+    Properties:
+      LaunchTemplateName: !Sub "${AWS::StackName}-launch-template"
+
+      LaunchTemplateData:
+
+        ImageId: !Sub '{{resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64}}'
+
+        InstanceType: t3.micro
+
+        KeyName: week1-task3-ec2-key
+
+        SecurityGroupIds:
+          - !Ref EC2SecurityGroup
+      
+        UserData:
+          Fn::Base64: !Sub |
+            #!/bin/bash
+            #same as the deploy.sh file created in Week 2
+            dnf update -y
+            dnf install -y httpd
+            systemctl enable httpd
+            systemctl start httpd
+          
+            #echo "<h1>Hello from CloudFormation!</h1>" > /var/www/html/index.html
+            #Created homepage
+            cat <<EOF > /var/www/html/index.html
+            <!DOCTYPE html>   
+            <html>
+            <head>
+              <title>Week 4 - CloudFormation</title>
+            </head>
+            <body>
+              <h1>🚀 AWS CloudFormation Deployment Successful!</h1>
+                <p>Infrastructure successfully provisioned using Infrastructure as Code (AWS CloudFormation). </P>
+                <ul>
+                  <li>VPC</li>
+                  <li>Public Subnets</li>
+                  <li>Internet Gateway</li>
+                  <li>Route Table</li>
+                  <li>Security Groups</li>
+                  <li>Launch Template</li>
+                  <li>Target Group</li>
+                  <li>Application Load Balancer</li>
+                  <li>Auto Scaling Group</li>
+                </ul>
+          
+                <p>Created using AWS CloudFormation (Infrastructure as Code)</p>
+                <p> AWS Internship • Week 4</p>
+          
+            </body>
+            </html>
+            EOF
+
+#Target Group 
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+
+    Properties:
+      Name: !Sub "${AWS::StackName}-tg"
+      Port: 80
+      Protocol: HTTP
+      VpcId: !Ref Week3VPC
+
+      HealthCheckPath: /
+      HealthCheckProtocol: HTTP
+      HealthCheckPort: traffic-port
+
+      TargetType: instance
+
+      HealthCheckTimeoutSeconds: 5
+      HealthCheckIntervalSeconds: 30
+      HealthyThresholdCount: 2
+      UnhealthyThresholdCount: 2
+      Matcher:
+        HttpCode: 200
+
+# ALB
+  ApplicationLoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+
+    Properties:
+      Name: !Sub "${AWS::StackName}-alb"
+      Scheme: internet-facing
+      Type: application
+
+      SecurityGroups:
+        - !Ref ALBSecurityGroup
+
+      Subnets:
+        - !Ref PublicSubnetA
+        - !Ref PublicSubnetB
+
+      Tags:
+        - Key: Name
+          Value: week4-alb
+
+# Listener
+  HTTPListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+
+    Properties:
+      LoadBalancerArn: !Ref ApplicationLoadBalancer
+      Port: 80
+      Protocol: HTTP
+
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup
+
+#Auto Scaling Group
+  AutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+
+    Properties:
+      VPCZoneIdentifier:
+        - !Ref PublicSubnetA
+        - !Ref PublicSubnetB
+
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+
+      MinSize: '1'
+      MaxSize: '3'
+      DesiredCapacity: '1'
+
+      TargetGroupARNs:
+        - !Ref TargetGroup
+
+      HealthCheckType: ELB
+      HealthCheckGracePeriod: 120
+
+      Tags:
+        - Key: Name
+          Value: week4-asg-instance
+          PropagateAtLaunch: true
+
+#Output of the template
+Outputs:
+
+  LoadBalancerDNS:
+    Description: DNS name of the Application Load Balancer
+    Value: !GetAtt ApplicationLoadBalancer.DNSName
+
+  WebsiteURL:
+    Description: Website URL
+    Value: !Sub "http://${ApplicationLoadBalancer.DNSName}"
