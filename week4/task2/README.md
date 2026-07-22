@@ -21,9 +21,7 @@ Create a CloudWatch alarm that:
 
 See:
 
-```
-diagrams/cloudwatch-monitoring-workflow.png
-```
+![CloudWatch Monitoring Workflow](diagrams/cloudwatch-monitoring-workflow.png)
 
 ---
 
