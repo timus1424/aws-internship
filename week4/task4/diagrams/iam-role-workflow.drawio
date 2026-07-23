@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="1AYGIjC_2xZgX0czbZuO">
+    <mxGraphModel dx="1013" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oyeiij0n4hpUQzn3wFfa-3" edge="1" parent="1" source="oyeiij0n4hpUQzn3wFfa-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="oyeiij0n4hpUQzn3wFfa-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oyeiij0n4hpUQzn3wFfa-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="EC2 Instance" vertex="1">
+          <mxGeometry height="30" width="120" x="300" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oyeiij0n4hpUQzn3wFfa-5" edge="1" parent="1" source="oyeiij0n4hpUQzn3wFfa-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="oyeiij0n4hpUQzn3wFfa-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oyeiij0n4hpUQzn3wFfa-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="IAM Role" vertex="1">
+          <mxGeometry height="30" width="120" x="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="oyeiij0n4hpUQzn3wFfa-7" edge="1" parent="1" source="oyeiij0n4hpUQzn3wFfa-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="oyeiij0n4hpUQzn3wFfa-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oyeiij0n4hpUQzn3wFfa-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="IAM Policy" vertex="1">
+          <mxGeometry height="30" width="120" x="300" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="oyeiij0n4hpUQzn3wFfa-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="S3 Bucket" vertex="1">
+          <mxGeometry height="30" width="120" x="300" y="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
