@@ -1,0 +1,224 @@
+.
+├── aws-cost-monitor.png
+├── CLEANUP-CHECKLIST.md
+├── policies-created
+│   └── README.md
+├── README.md
+├── repository-structure.txt
+├── week1
+│   ├── task1
+│   │   ├── docs
+│   │   │   ├── aws_cli_verification.txt
+│   │   │   └── cloud_concepts_report.docx
+│   │   ├── README.md
+│   │   └── screenshots
+│   │       ├── AWS_account_setup.png
+│   │       ├── billing_alarm.png
+│   │       ├── iam_user.png
+│   │       └── mfa_setup.png
+│   ├── task2
+│   │   ├── docs
+│   │   │   ├── admin-group-policy.png
+│   │   │   ├── custompolicytest-success&failure.png
+│   │   │   ├── evidence-iam-groups.png
+│   │   │   ├── evidence-mfa_setup.png
+│   │   │   ├── iam-concepts.md
+│   │   │   ├── readonlygroup-policy.png
+│   │   │   └── test-user_profile-details.png
+│   │   ├── logs
+│   │   │   └── cli-test-results.txt
+│   │   ├── policies
+│   │   │   └── s3-readonly-policy.json
+│   │   └── README.md
+│   └── task3
+│       ├── notes.md
+│       ├── README.md
+│       ├── screenshots
+│       │   ├── 01-launch-configuration.png
+│       │   ├── 02-security-group.png
+│       │   ├── 03-ssh-success.png
+│       │   ├── 04-ec2-dashboard.png
+│       │   ├── 05-live-webpage.png
+│       │   └── 06-ssh-terminal-check.png
+│       ├── scripts
+│       │   └── install-webserver.sh
+│       └── src
+│           └── index.html
+├── week2
+│   ├── task1
+│   │   ├── diagrams
+│   │   │   └── vpc-architecture.drawio.png
+│   │   ├── docs
+│   │   │   └── traffic-flow.md
+│   │   ├── notes.md
+│   │   ├── README.md
+│   │   ├── screenshots
+│   │   │   ├── 01-vpc-created.png
+│   │   │   ├── 02-public-private-subnets.png
+│   │   │   ├── 03-internet-gateway.png
+│   │   │   ├── 04-public-route-table.png
+│   │   │   ├── 05-private-route-table.png
+│   │   │   ├── 06-ec2-instance-details.png
+│   │   │   ├── 07-security-group.png
+│   │   │   ├── 08-successful-ssh-connection.png
+│   │   │   ├── 09-apache-running.png
+│   │   │   └── 10-live-website.png
+│   │   └── templates
+│   │       └── vpc-setup.yaml
+│   ├── task2
+│   │   ├── network-acl-inbound.png
+│   │   ├── network-acl-outbound.png
+│   │   ├── network-acl-subnet-associations.png
+│   │   ├── notes.md
+│   │   ├── README.md
+│   │   └── security-group.png
+│   └── task3
+│       ├── notes.md
+│       ├── README.md
+│       ├── screenshots
+│       │   ├── apache-running.png
+│       │   ├── browser-output.png
+│       │   ├── ec2-instance-01.png
+│       │   ├── ec2-instance-02.png
+│       │   ├── security-group.png
+│       │   └── terminal-curl.png
+│       ├── scripts
+│       │   └── deploy.sh
+│       └── src
+│           └── index.html
+├── week3
+│   ├── task1
+│   │   ├── diagrams
+│   │   │   ├── week3-autoscaling.drawio
+│   │   │   └── week3-autoscaling.png
+│   │   ├── notes.md
+│   │   ├── README.md
+│   │   ├── screenshots
+│   │   │   ├── 01-launch-template-created.png
+│   │   │   ├── 02-target-group-created.png
+│   │   │   ├── 03-week3-public-subnet.png
+│   │   │   ├── 04-public-subnets.png
+│   │   │   ├── 05-alb-review-page.png
+│   │   │   ├── 06-week3-alb-created.png
+│   │   │   ├── 07-alb+launchtemplate.png
+│   │   │   ├── 08-load_balancer+target_group.png
+│   │   │   ├── 09-elb-health-checks.png
+│   │   │   ├── 10-scaling-policy.png
+│   │   │   ├── 11-review-alb.jpeg
+│   │   │   ├── 12-auto-scaling-overview.png
+│   │   │   ├── 13-verified-auo-scaling.png
+│   │   │   ├── 14-target-group-verified.png
+│   │   │   └── 15-load-balacer-verified.png
+│   │   └── scripts
+│   │       ├── deploy.sh
+│   │       └── user-data.sh
+│   ├── task2
+│   │   ├── config
+│   │   │   └── cloudwatch-agent-config.json
+│   │   ├── notes-v2.md
+│   │   ├── README.md
+│   │   └── screenshots
+│   │       ├── 01-os-verification.png
+│   │       ├── 02-internet-connectivity.png
+│   │       ├── 03-cloudwatch-agent-installation.png
+│   │       ├── 04-cloudwatch-agent-inactive.png
+│   │       ├── 05-launch-template-v2.png
+│   │       ├── 06-iam-role-attached.png
+│   │       └── 07-cloudwatch-agent-running.png
+│   └── task3
+│       ├── cleanup.md
+│       ├── diagrams
+│       │   ├── architecture-overview.drawio
+│       │   ├── architecture-overview.png
+│       │   ├── cloudformation-workflow.drawio
+│       │   └── cloudformation-workflow.png
+│       ├── notes.md
+│       ├── parameters
+│       │   └── sample-parameters.json
+│       ├── README.md
+│       ├── screenshots
+│       │   ├── 01-CF-template-001.png
+│       │   ├── 01-CF-template-002.png
+│       │   ├── 01-CF-template-003.png
+│       │   ├── 02-template-validation-success.png
+│       │   ├── 03-create-stack-page.png
+│       │   ├── 04-stack-parameters.png
+│       │   ├── 05-stack-create-in-progress.png
+│       │   ├── 06-stack-created.png
+│       │   ├── 07-stack-resources.png
+│       │   ├── 08-stack-outputs.png
+│       │   ├── 09-webpage.png
+│       │   ├── 10-ec2-instance-running.png
+│       │   └── 11-stack-deleted.png
+│       └── templates
+│           └── ec2-vpc.yaml
+└── week4
+    ├── task1
+    │   ├── cleanup-checklist.md
+    │   ├── diagrams
+    │   │   ├── autoscaling-week4.drawio
+    │   │   └── autoscaling-week4.png
+    │   ├── launch-template
+    │   │   └── userdata.sh
+    │   ├── notes.md
+    │   ├── README.md
+    │   └── screenshots
+    │       ├── 01-week4-vpc-created.png
+    │       ├── 02-public-subnets-created.png
+    │       ├── 03-week4-igw-attached.png
+    │       ├── 04-week4-public-route-table-configured.png
+    │       ├── 05-week4-security-group-created.png
+    │       ├── 06-week4-launch-template-created.png
+    │       ├── 07-target-group-healthy-check.png
+    │       ├── 08-week4-alb.png
+    │       ├── 09-week4-auto-scaling-group-created.png
+    │       └── 10-final-working-website.png
+    ├── task2
+    │   ├── diagrams
+    │   │   ├── cloudwatch-monitoring-workflow.drawio
+    │   │   └── cloudwatch-monitoring-workflow.png
+    │   ├── notes.md
+    │   ├── README.md
+    │   └── screenshots
+    │       ├── 02-sns-topic-created.png
+    │       ├── 03-email-subscription-confirmed.png
+    │       ├── 04-high-cpu-alarm-created.png
+    │       ├── 05-high-cpu-load-terminal.png
+    │       ├── 06-cloudwatch-alarm-triggered.png
+    │       ├── 07-sns-email-notification.jpeg
+    │       ├── 08-cpu-restored-after-pkill-termial.png
+    │       └── 09-alarm-returned-to-ok.png
+    ├── task3
+    │   ├── debugging-journey.md
+    │   ├── diagrams
+    │   │   ├── cloudformation-stack-architecture.drawio
+    │   │   └── cloudformation-stack-architecture.png
+    │   ├── notes.md
+    │   ├── README.md
+    │   ├── screenshots
+    │   │   ├── 01-cloudformation-create-stack-command.png
+    │   │   ├── 02-stack-events.png
+    │   │   ├── 03-stack-create-complete.png
+    │   │   ├── 04-stack-outputs.png
+    │   │   └── 05-cloudformation-deployed-website.png
+    │   └── templates
+    │       └── full-stack.yaml
+    └── task4
+        ├── diagrams
+        │   ├── iam-role-workflow.drawio
+        │   └── iam-role-workflow.png
+        ├── hello.txt
+        ├── notes.md
+        ├── policies
+        │   ├── ec2-s3-read-policy.json
+        │   └── week4-ec2-s3-role.md
+        ├── README.md
+        └── screenshots
+            ├── 01-s3-bucket-created.png
+            ├── 02-iam-policy-created.png
+            ├── 03-iam-role-created.png
+            ├── 04-role-attached-to-task4-instance.png
+            ├── 05-assumed-role-verification.png
+            └── 06-s3-permission-test.png
+
+54 directories, 168 files
