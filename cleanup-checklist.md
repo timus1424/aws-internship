@@ -1,33 +1,59 @@
-# AWS Cleanup Checklist
+# AWS Internship Cleanup Checklist
 
-Infrastructure cleanup is an important part of cloud engineering.
+## Week 1
 
-Unlike local development, many AWS resources continue running after a task is completed and may incur charges. Cleaning up unused resources helps control costs and keeps the AWS environment organized.
+- [x] Delete unused IAM users (if created only for practice)
+- [x] Delete unused IAM groups
+- [x] Delete unused custom IAM policies
 
 ---
 
-## Cleanup Completed Before Starting Week 4
+## Week 2
 
-### EC2:
-- [x] Terminated `week2-public-ec2`
-- [x] Terminated Auto Scaling instances created during Week 3
+- [x] Terminate EC2 instances
+- [x] Delete Security Groups
+- [x] Delete Network ACLs (if custom)
+- [x] Delete Route Tables (if custom)
+- [x] Delete Internet Gateway
+- [x] Delete Public & Private Subnets
+- [x] Delete VPC
 
-### Auto Scaling:
-- [x] Deleted `week3-asg`
+---
 
-### Load Balancing:
-- [x] Deleted `week3-alb`
-- [x] Deleted `week3-target-group`
+## Week 3
 
-### CloudFormation:
-- [x] Deleted the Week 3 CloudFormation stack after completing documentation and collecting screenshots.
+- [x] Delete CloudWatch Alarms
+- [x] Delete Launch Template
+- [x] Delete Auto Scaling Group
+- [x] Delete Target Group
+- [x] Delete Application Load Balancer
 
-### Verification:
-- [x] Confirmed no unnecessary EC2 instances remained running.
-- [x] Confirmed no unnecessary Load Balancers remained active.
-- [x] Confirmed Auto Scaling Groups were removed.
-- [x] Confirmed Target Groups were removed.
-- [x] Retained only non-billable configuration resources (such as Launch Templates) for future tasks.
+---
+
+## Week 4
+
+- [x] Empty S3 bucket
+- [x] Delete S3 bucket
+- [x] Delete IAM Role
+- [x] Delete IAM Policy
+- [x] Delete Standalone EC2 instance
+
+---
+
+## Final Verification
+
+- [x] No running EC2 instances
+- [x] No unattached EBS volumes
+- [x] No Elastic IPs
+- [x] No Load Balancers
+- [x] No Target Groups
+- [x] No Launch Templates
+- [x] No CloudWatch Alarms
+- [x] No S3 buckets created during the internship
+- [x] No unnecessary IAM roles or policies
+- [x] Billing dashboard shows no unexpected active resources
+
+![AWS Cost Monitor](aws-cost-monitor.png)
 
 ---
 
@@ -43,24 +69,7 @@ Unlike local development, many AWS resources continue running after a task is co
 
 ---
 
-## Personal Cleanup Workflow
-
-Before ending each internship task:
-
-- Check EC2 Instances
-- Check Auto Scaling Groups
-- Check Load Balancers
-- Check Target Groups
-- Check CloudFormation Stacks
-- Check EBS Volumes
-- Check Elastic IPs
-- Review AWS Billing Dashboard
-
-This checklist will continue to be updated throughout the internship.
-
----
-
-## Lesson Learned
+## Lesson 
 
 One of the biggest differences between cloud infrastructure and local development is that cloud resources continue running until they are explicitly stopped or deleted. Performing cleanup after every task is essential to prevent unnecessary costs and maintain a clean AWS environment.
 
